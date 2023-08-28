@@ -90,34 +90,42 @@
     description = "Ilya";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [
-	vim
-	neovim
-	firefox
-	alacritty
-	ripgrep
-	go
-	tmux
-	_1password
-	_1password-gui
-	neofetch
-	git
-	redshift
-	picom
-	tailscale
     ];
   };
 
 
-  home-manager.users.slash3b = { pkgs, ... }: {
-	home.packages = [
-		pkgs.tree
-	];
-	home.stateVersion = "23.05";
-  };
-  #home-manager.users.slash3b.home.stateVersion
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  home-manager.users.slash3b = { pkgs, ... }: {
+	nixpkgs.config.allowUnfree = true;
+
+	home.stateVersion = "23.05";
+
+	home.packages = with pkgs; [
+		tree
+		# like a redshift
+		go-sct
+		neovim
+		firefox
+		# terminal
+		alacritty
+		# modern grep
+		ripgrep
+		go
+		# terminal multiplexer
+		tmux
+		_1password
+		_1password-gui
+		neofetch
+		git
+		# compositor, whatever this means, makes everything smooooth
+		picom
+		# amazing magical thing
+		tailscale
+	];
+  };
+  #home-manager.users.slash3b.home.stateVersion
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
