@@ -97,7 +97,15 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  home-manager.users.slash3b = { pkgs, ... }: {
+  home-manager.users.slash3b = { pkgs, nixpkgs, ... }: {
+
+	# 
+	# By default, Home Manager uses a private pkgs instance 
+	# that is configured via the home-manager.users.<name>.nixpkgs options. 
+	# 
+	# To instead use the global pkgs that is configured via the system level nixpkgs options, 
+	# set `home-manager.useGlobalPkgs = true;`
+	#
 	nixpkgs.config.allowUnfree = true;
 
 	home.stateVersion = "23.05";
