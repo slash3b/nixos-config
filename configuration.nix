@@ -32,6 +32,19 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  services.pipewire = {
+	enable = true;
+	audio.enable = true;
+	pulse.enable = true;
+
+	alsa = {
+		enable = true;
+		support32Bit = true;
+	};
+
+	jack.enable = true;
+  };
+
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -65,23 +78,8 @@
     vSync = true;
   };
 
-  services.redshift = {
+  services.tailscale = {
   	enable = true;
-	brightness = {
-	  day = "1";
-	  night = "1";
-	};
-	temperature = {
-	  night = 3700;
-	};
-
-/*
-	config.location {
-	  provider = "manual";
-	  latitude = "47.01";
-	  longitude = "28.86";
-	};
-	*/
   };
 
 
@@ -90,7 +88,7 @@
   users.users.slash3b = {
     isNormalUser = true;
     description = "Ilya";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [
 	vim
 	neovim
@@ -105,6 +103,7 @@
 	git
 	redshift
 	picom
+	tailscale
     ];
   };
 
