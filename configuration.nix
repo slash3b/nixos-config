@@ -127,7 +127,15 @@
 		neofetch
 		# amazing magical thing
 		tailscale
+		transmission
+		xfce.thunar
+		vlc
+		fish
 	];
+
+	home.file = {
+		".tmux.conf".source = ./sources/.tmux.conf;
+	};
   };
 
   # List packages installed in system profile. To search, run:
