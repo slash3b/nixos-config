@@ -8,6 +8,8 @@
     [ 
     	# Include the results of the hardware scan.
 	./hardware-configuration.nix
+	# add home-manager as NixOS module
+	# see: https://nix-community.github.io/home-manager/index.html#sec-install-nixos-module
 	<home-manager/nixos>
     ];
 
@@ -82,8 +84,6 @@
   	enable = true;
   };
 
-
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.slash3b = {
     isNormalUser = true;
@@ -97,27 +97,26 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # 
+  # By default, Home Manager uses a private pkgs instance 
+  # that is configured via the home-manager.users.<name>.nixpkgs options. 
+  # 
+  # To instead use the global pkgs that is configured via the system level nixpkgs options, 
+  # set `home-manager.useGlobalPkgs = true;`
+  #
+  home-manager.useGlobalPkgs = true;
   home-manager.users.slash3b = { pkgs, nixpkgs, ... }: {
 
-	# 
-	# By default, Home Manager uses a private pkgs instance 
-	# that is configured via the home-manager.users.<name>.nixpkgs options. 
-	# 
-	# To instead use the global pkgs that is configured via the system level nixpkgs options, 
-	# set `home-manager.useGlobalPkgs = true;`
-	#
-	nixpkgs.config.allowUnfree = true;
+	# with useGlobalPkgs enabled, this is not needed, just comment out for now
+	# nixpkgs.config.allowUnfree = true;
 
 	home.stateVersion = "23.05";
 
 	home.packages = with pkgs; [
-		tree
 		# like a redshift
 		go-sct
 		neovim
 		firefox
-		# terminal
-		alacritty
 		# modern grep
 		ripgrep
 		go
@@ -126,19 +125,25 @@
 		_1password
 		_1password-gui
 		neofetch
-		git
-		# compositor, whatever this means, makes everything smooooth
-		picom
 		# amazing magical thing
 		tailscale
 	];
   };
-  #home-manager.users.slash3b.home.stateVersion
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 	vim
+	tree
+	# terminal
+	alacritty
+	git	
+	# compositor, whatever this means, makes everything smooooth
+	picom
+
+	# if installed like this, this will be more distro agnostic way to manager dotfiles
+	# see: https://www.youtube.com/watch?v=FcC2dzecovw
+  	# home-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
