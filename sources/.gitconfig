@@ -1,0 +1,11 @@
+[user]
+	name = Ilya Tribusean
+	email = slash3b@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	filemode = false
+	editor = nvim
+[rerere]
+    	enabled = 1
+[init]
+	defaultBranch = main

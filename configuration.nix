@@ -131,10 +131,15 @@
 		xfce.thunar
 		vlc
 		fish
+		htop
+		rofi
+		gnumake
 	];
 
 	home.file = {
 		".tmux.conf".source = ./sources/.tmux.conf;
+		".gitconfig".source = ./sources/.gitconfig;
+		".gitignore".source = ./sources/.gitignore;
 	};
   };
 
