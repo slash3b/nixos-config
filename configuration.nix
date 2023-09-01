@@ -140,6 +140,10 @@
 		".tmux.conf".source = ./sources/.tmux.conf;
 		".gitconfig".source = ./sources/.gitconfig;
 		".gitignore".source = ./sources/.gitignore;
+		".config/i3" = {
+			source = ./sources/i3;
+			recursive = true;
+		};
 	};
   };
 
