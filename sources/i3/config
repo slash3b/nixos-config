@@ -17,7 +17,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -124,7 +124,7 @@ bindsym $mod+Shift+e exit
 
 
 # xfce4-screenshooter bindings
-bindsym Shift+Print exec "xfce4-screenshooter -r"
+bindsym $mod+Shift+5 exec "xfce4-screenshooter -r"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -197,8 +197,8 @@ exec --no-startup-id nm-applet
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
-# what is that ?
-new_window none
+# a way to remove borders from windows
+# new_window none
 
 # the possibility to come back to your last workspace with the same keystroke
 # # https://thevaluable.dev/window-manager-mouseless-i3/

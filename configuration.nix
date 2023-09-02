@@ -134,6 +134,9 @@
 		htop
 		rofi
 		gnumake
+		xfce.xfce4-screenshooter
+		# just to be able to control volume throug pactl ?
+		pulseaudio
 	];
 
 	home.file = {
