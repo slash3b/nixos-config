@@ -142,12 +142,22 @@
 		# system tools
 		pciutils
 		file
+
+		# chats
+		slack
+		zoom-us
+
+		# dev
+		postman
+
+		feh
 	];
 
 	home.file = {
 		".tmux.conf".source = ./sources/.tmux.conf;
 		".gitconfig".source = ./sources/.gitconfig;
 		".gitignore".source = ./sources/.gitignore;
+		".alacritty.yml".source = ./sources/.alacritty.yml;
 		".config/i3" = {
 			source = ./sources/i3;
 			recursive = true;

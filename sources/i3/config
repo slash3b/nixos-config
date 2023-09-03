@@ -67,7 +67,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -187,7 +187,9 @@ bindsym $mod+l exec --no-startup-id i3lock -c 000000 -d
 # https://dougie.io/linux/hidpi-retina-i3wm/
 
 # walls <3
-exec --no-startup-id feh --bg-max ${HOME}/Pictures/wallpapers/phone/lavender.jpg
+# /home/slash3b/.config/i3
+exec --no-startup-id feh --bg-max /home/slash3b/.config/i3/seattle.jpg
+
 # keyboard lang switch
 exec --no-startup-id "setxkbmap -layout us,ru -option grp:win_space_toggle"
 # networking applet
