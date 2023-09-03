@@ -124,7 +124,7 @@ bindsym $mod+Shift+e exit
 
 
 # xfce4-screenshooter bindings
-bindsym $mod+Shift+5 exec "xfce4-screenshooter -r"
+bindsym $mod+Shift+i exec "xfce4-screenshooter -r"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
