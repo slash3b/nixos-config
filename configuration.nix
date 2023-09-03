@@ -151,6 +151,8 @@
 		postman
 
 		feh
+		# gpg2
+		gnupg1
 	];
 
 	home.file = {
@@ -158,6 +160,7 @@
 		".gitconfig".source = ./sources/.gitconfig;
 		".gitignore".source = ./sources/.gitignore;
 		".alacritty.yml".source = ./sources/.alacritty.yml;
+		".config/fish/config.fish".source = ./sources/config.fish;
 		".config/i3" = {
 			source = ./sources/i3;
 			recursive = true;
