@@ -152,7 +152,9 @@
 
 		feh
 		# gpg2
+        # todo: configure this and other programs properly
 		gnupg1
+        fzf
 	];
 
 	home.file = {
@@ -161,6 +163,9 @@
 		".gitignore".source = ./sources/.gitignore;
 		".alacritty.yml".source = ./sources/.alacritty.yml;
 		".config/fish/config.fish".source = ./sources/config.fish;
+		".vimrc".source = ./sources/.vimrc;
+		".config/nvim/init.vim".source = ./sources/init.vim;
+
 		".config/i3" = {
 			source = ./sources/i3;
 			recursive = true;
