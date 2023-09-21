@@ -155,6 +155,17 @@
         # todo: configure this and other programs properly
 		gnupg1
         fzf
+
+        # json
+        jq
+
+        wget
+        zip
+        unzip
+
+        # pdf
+        evince
+
 	];
 
 	home.file = {
