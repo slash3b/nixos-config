@@ -84,6 +84,13 @@
   	enable = true;
   };
 
+  services.syncthing = {
+        enable = true;
+        user = "slash3b";
+        dataDir = "/home/slash3b/Documents";    # Default folder for new synced folders
+        configDir = "/home/slash3b/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.slash3b = {
     isNormalUser = true;
@@ -148,7 +155,7 @@
 		zoom-us
 
 		# dev
-		postman
+		# postman
 
 		feh
 		# gpg2
@@ -166,6 +173,7 @@
         # pdf
         evince
 
+        vscode
 	];
 
 	home.file = {
@@ -191,7 +199,7 @@
 	tree
 	# terminal
 	alacritty
-	git	
+	git
 	# compositor, whatever this means, makes everything smooooth
 	picom
 

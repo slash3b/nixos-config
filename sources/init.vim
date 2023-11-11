@@ -27,6 +27,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
 
+" Monochrome theme
+Plug 'fxn/vim-monochrome'
+
 " FZF 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
