@@ -174,6 +174,12 @@
         evince
 
         vscode
+
+        # Collection of common network programs
+        inetutils
+
+        # direnv – unclutter your .profile
+        direnv
 	];
 
 	home.file = {

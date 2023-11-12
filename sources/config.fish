@@ -21,5 +21,19 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+### git
+alias gis='git status'
+
 # vim and emacs
 alias vim='nvim'
+
+# GO (or any other lang)
+# set -x GOBIN "$HOME/go/bin"
+set -Ua fish_user_paths "$HOME/go/bin"
+
+# direnv 
+# trigger direnv at prompt, and on every arrow-based directory change (default)
+set -g direnv_fish_mode eval_on_arrow 
+
+direnv hook fish | source
+
