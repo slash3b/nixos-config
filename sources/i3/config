@@ -122,9 +122,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
 
-
 # xfce4-screenshooter bindings
-bindsym $mod+Shift+i exec "xfce4-screenshooter -r"
+bindsym $mod+Shift+i exec "xfce4-screenshooter -r --save=$HOME/Documents/screenshots/$(date +'%m-%d-%Y-%H-%M-%S%z').jpg"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

@@ -49,8 +49,9 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
     enable = true;
+
+    layout = "us";
     autorun = true;
     dpi = 144;
 
@@ -60,14 +61,17 @@
     };
 
     displayManager = {
-        defaultSession = "none+i3";
         lightdm.enable = true;
 
+        defaultSession = "none+i3";
+
         autoLogin = {
-	        user = "slash3b";
+            user = "slash3b";
             enable = true;
         };
     };
+
+    videoDrivers = [ "amdgpu" ];
 
     windowManager = {
 	    i3.enable = true;
