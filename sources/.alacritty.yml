@@ -29,7 +29,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 5
+    x: 0
     y: 0
 
   # Spread additional padding evenly around the terminal content.
@@ -218,8 +218,7 @@ schemes:
     indexed_colors:
         - { index: 16, color: "#FAB387" }
         - { index: 17, color: "#F5E0DC" }
-        
-   
+
   ### Catppuccin-Macchiato ###
   Catppuccin-Macchiato: &Catppuccin-Macchiato
     # Default colors
