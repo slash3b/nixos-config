@@ -35,5 +35,9 @@ set -Ua fish_user_paths "$HOME/go/bin"
 # trigger direnv at prompt, and on every arrow-based directory change (default)
 set -g direnv_fish_mode eval_on_arrow 
 
+# direnv fish config 
 direnv hook fish | source
 
+# asdf golang plugin
+# https://github.com/asdf-community/asdf-golang
+# . ~/.asdf/plugins/golang/set-env.fish

@@ -55,22 +55,22 @@
     dpi = 144;
 
     desktopManager = {
-	xterm.enable = false;
-	wallpaper.mode = "fill";
+        xterm.enable = false;
+        wallpaper.mode = "fill";
     };
 
     displayManager = {
-	defaultSession = "none+i3";
-	lightdm.enable = true;
+        defaultSession = "none+i3";
+        lightdm.enable = true;
 
         autoLogin = {
-	  user = "slash3b";
-          enable = true;
+	        user = "slash3b";
+            enable = true;
         };
     };
 
     windowManager = {
-	i3.enable = true;
+	    i3.enable = true;
     };
   };
 
@@ -96,8 +96,7 @@
     isNormalUser = true;
     description = "Ilya";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [
-    ];
+        packages = with pkgs; [];
   };
 
 
@@ -126,7 +125,6 @@
 		firefox
 		# modern grep
 		ripgrep
-		go
 		# terminal multiplexer
 		tmux
 		_1password
@@ -151,7 +149,6 @@
 		file
 
 		# chats
-		slack
 		zoom-us
 
 		# dev
@@ -180,6 +177,13 @@
 
         # direnv – unclutter your .profile
         direnv
+
+        # asdf
+        # coreutils
+        # asdf-vm
+
+        # i3
+        lxappearance
 	];
 
 	home.file = {
@@ -207,7 +211,7 @@
 	alacritty
 	git
 	# compositor, whatever this means, makes everything smooooth
-	picom
+	# picom
 
 	# if installed like this, this will be more distro agnostic way to manager dotfiles
 	# see: https://www.youtube.com/watch?v=FcC2dzecovw
