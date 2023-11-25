@@ -173,7 +173,7 @@
         # todo: configure this and other programs properly
 
 		#gnupg1
-        # pinentry # instead gpg-agent is installed
+        # pinentry
 
         fzf
 
@@ -203,6 +203,8 @@
         lxappearance
     ];
 
+  # todo: learn how to import/export GPG keys
+  # and figure out storage
   services.gpg-agent = {
     enable = true;
     pinentryFlavor = "tty";
