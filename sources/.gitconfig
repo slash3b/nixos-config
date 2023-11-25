@@ -1,11 +1,23 @@
 [user]
 	name = Ilya Tribusean
 	email = slash3b@gmail.com
+    signingkey = A13AE6BBAF0DADF2
+
 [core]
 	excludesfile = ~/.gitignore
 	filemode = false
 	editor = nvim
+
 [rerere]
     	enabled = 1
+
 [init]
 	defaultBranch = main
+
+[gpg]
+    program = gpg
+
+# use conditional to sign only for work(?)
+# see https://git-scm.com/docs/git-config#_example
+[commit]
+    gpgsign = true
