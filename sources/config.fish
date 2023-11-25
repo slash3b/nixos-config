@@ -41,3 +41,8 @@ direnv hook fish | source
 # asdf golang plugin
 # https://github.com/asdf-community/asdf-golang
 # . ~/.asdf/plugins/golang/set-env.fish
+
+# from mitchelh
+if isatty
+    set -x GPG_TTY (tty)
+end

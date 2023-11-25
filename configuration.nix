@@ -93,9 +93,9 @@
         user = "slash3b";
         dataDir = "/home/slash3b/Documents";    # Default folder for new synced folders
         configDir = "/home/slash3b/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
-    };
+  };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with ‘passwd’
   users.users.slash3b = {
     isNormalUser = true;
     description = "Ilya";
@@ -107,10 +107,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # 
+  #
   # By default, Home Manager uses a private pkgs instance 
   # that is configured via the home-manager.users.<name>.nixpkgs options. 
-  # 
+  #
   # To instead use the global pkgs that is configured via the system level nixpkgs options, 
   # set `home-manager.useGlobalPkgs = true;`
   #
@@ -121,6 +121,16 @@
 	# nixpkgs.config.allowUnfree = true;
 
 	home.stateVersion = "23.05";
+
+  programs.gpg = {
+      enable = true;
+  };
+
+  programs.go = {
+    enable = true;
+    goPath = "code/go";
+    goPrivate = [ "github.com/mitchellh" "github.com/hashicorp" "rfc822.mx" ];
+  };
 
 	home.packages = with pkgs; [
 		# like a redshift
@@ -153,7 +163,7 @@
 		file
 
 		# chats
-		zoom-us
+		# zoom-us
 
 		# dev
 		# postman
@@ -161,7 +171,10 @@
 		feh
 		# gpg2
         # todo: configure this and other programs properly
-		gnupg1
+
+		#gnupg1
+        # pinentry # instead gpg-agent is installed
+
         fzf
 
         # json
@@ -188,7 +201,16 @@
 
         # i3
         lxappearance
-	];
+    ];
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "tty";
+
+    # cache the keys forever so we don't get asked for a password
+    defaultCacheTtl = 31536000;
+    maxCacheTtl = 31536000;
+  };
 
 	home.file = {
 		".tmux.conf".source = ./sources/.tmux.conf;
