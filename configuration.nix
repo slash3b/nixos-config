@@ -203,6 +203,8 @@
         lxappearance
     ];
 
+  services.caffeine.enable = true;
+
   # todo: learn how to import/export GPG keys
   # and figure out storage
   services.gpg-agent = {
