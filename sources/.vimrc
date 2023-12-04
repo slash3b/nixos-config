@@ -74,6 +74,7 @@ set listchars=tab:¦\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 " colorize what exceeds 120 char line
 set colorcolumn=120
 
+colorscheme monochrome
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " => References

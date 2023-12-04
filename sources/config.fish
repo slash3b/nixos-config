@@ -11,7 +11,9 @@ set EDITOR "nvim"                 		  # $EDITOR use Emacs in terminal
 #set -x MANPAGER "nvim +Man!"
 
 ### "less" as manpager
-set -x MANPAGER "less"
+set -x MANPAGER "less -S"
+
+set -x PAGER "less -S"
 
 ### ALIASES ###
 # navigation

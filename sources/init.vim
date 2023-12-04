@@ -11,7 +11,7 @@ let &packpath = &runtimepath
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Note 1:
 " some plugins throw out 'deprecated' message

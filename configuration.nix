@@ -99,7 +99,7 @@
   users.users.slash3b = {
     isNormalUser = true;
     description = "Ilya";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker"];
         packages = with pkgs; [];
   };
 
@@ -124,12 +124,6 @@
 
   programs.gpg = {
       enable = true;
-  };
-
-  programs.go = {
-    enable = true;
-    goPath = "code/go";
-    goPrivate = [ "github.com/mitchellh" "github.com/hashicorp" "rfc822.mx" ];
   };
 
 	home.packages = with pkgs; [
@@ -201,6 +195,9 @@
 
         # i3
         lxappearance
+
+        # docker
+        ctop
     ];
 
   services.caffeine.enable = true;
@@ -232,6 +229,14 @@
 	};
   };
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -240,7 +245,7 @@
 	# terminal
 	alacritty
 	git
-	# compositor, whatever this means, makes everything smooooth
+	# compositor
 	# picom
 
 	# if installed like this, this will be more distro agnostic way to manager dotfiles
