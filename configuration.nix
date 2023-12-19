@@ -251,6 +251,7 @@
 	# if installed like this, this will be more distro agnostic way to manager dotfiles
 	# see: https://www.youtube.com/watch?v=FcC2dzecovw
   	# home-manager
+    networkmanagerapplet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
