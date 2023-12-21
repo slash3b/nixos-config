@@ -8,6 +8,7 @@
     [
     	# Include the results of the hardware scan.
 	./hardware-configuration.nix
+
 	# add home-manager as NixOS module
 	# see: https://nix-community.github.io/home-manager/index.html#sec-install-nixos-module
 	<home-manager/nixos>
@@ -44,7 +45,7 @@
 		support32Bit = true;
 	};
 
-	jack.enable = true;
+	# jack.enable = true;
   };
 
   # Configure keymap in X11
@@ -120,50 +121,51 @@
 	# with useGlobalPkgs enabled, this is not needed, just comment out for now
 	# nixpkgs.config.allowUnfree = true;
 
-	home.stateVersion = "23.05";
+	home.stateVersion = "23.11";
 
   programs.gpg = {
       enable = true;
   };
 
-	home.packages = with pkgs; [
-		# like a redshift
-		go-sct
-		neovim
-		firefox
-		# modern grep
-		ripgrep
-		# terminal multiplexer
-		tmux
-		_1password
-		_1password-gui
-		neofetch
-		# amazing magical thing
-		tailscale
-		transmission
-		xfce.thunar
-		vlc
-		fish
-		htop
-		rofi
-		gnumake
-		xfce.xfce4-screenshooter
+  home.packages = with pkgs; [
+	neovim
+	firefox
+	# modern grep
+	ripgrep
+	# terminal multiplexer
+	tmux
 
-		# just to be able to control volume throug pactl ?
-		pulseaudio
+	_1password
+	_1password-gui
+	neofetch
 
-		# system tools
-		pciutils
-		file
+	# amazing magical thing
+	tailscale
 
-		# chats
-		# zoom-us
+	transmission
+	xfce.thunar
+	vlc
+	fish
+	htop
+	rofi
+	gnumake
+	xfce.xfce4-screenshooter
 
-		# dev
-		# postman
+	# just to be able to control volume throug pactl ?
+	pulseaudio
 
-		feh
-		# gpg2
+	# system tools
+	pciutils
+	file
+
+	# chats
+	# zoom-us
+
+	# dev
+	# postman
+
+	feh
+	# gpg2
         # todo: configure this and other programs properly
 
 		#gnupg1
@@ -189,15 +191,15 @@
         # direnv – unclutter your .profile
         direnv
 
-        # asdf
         # coreutils
-        # asdf-vm
 
         # i3
         lxappearance
 
         # docker
         ctop
+
+        autorandr
     ];
 
   services.caffeine.enable = true;
@@ -245,12 +247,8 @@
 	# terminal
 	alacritty
 	git
-	# compositor
-	# picom
 
-	# if installed like this, this will be more distro agnostic way to manager dotfiles
-	# see: https://www.youtube.com/watch?v=FcC2dzecovw
-  	# home-manager
+	# ui to connect to wifi
     networkmanagerapplet
   ];
 
@@ -262,9 +260,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -283,5 +278,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 }
