@@ -44,16 +44,20 @@ direnv hook fish | source
 # https://github.com/asdf-community/asdf-golang
 # . ~/.asdf/plugins/golang/set-env.fish
 
+function godoc
+    go doc -all $argv | cat -n | less -S
+end
+
+# https://github.com/ivakyb/fish_ssh_agent
+fish_ssh_agent
+
+# temporary
+ssh-add -q
+
 # from mitchelh
 if isatty
     set -x GPG_TTY (tty)
 end
 
 
-function godoc
-    godoc go doc -all $argv | cat -n | less -S
-end
-
-# https://github.com/ivakyb/fish_ssh_agent
-fish_ssh_agent
 
