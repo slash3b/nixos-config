@@ -123,9 +123,6 @@
 
 	home.stateVersion = "23.11";
 
-  programs.gpg = {
-      enable = true;
-  };
 
   home.packages = with pkgs; [
 	neovim
@@ -139,7 +136,6 @@
 	_1password-gui
 	neofetch
 
-	# amazing magical thing
 	tailscale
 
 	transmission
@@ -204,6 +200,9 @@
 
   services.caffeine.enable = true;
 
+  programs.gpg = {
+      enable = true;
+  };
   # todo: learn how to import/export GPG keys
   # and figure out storage
   services.gpg-agent = {
@@ -228,6 +227,7 @@
 			source = ./sources/i3;
 			recursive = true;
 		};
+        ".ssh/config".source = ./sources/.ssh/config;
 	};
   };
 
@@ -262,9 +262,9 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = true;
-  services.openssh.settings.PermitRootLogin = "no";
+  # services.openssh.enable = true;
+  # services.openssh.settings.PasswordAuthentication = true;
+  # services.openssh.settings.PermitRootLogin = "no";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

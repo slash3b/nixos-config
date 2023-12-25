@@ -48,3 +48,12 @@ direnv hook fish | source
 if isatty
     set -x GPG_TTY (tty)
 end
+
+
+function godoc
+    godoc go doc -all $argv | cat -n | less -S
+end
+
+# https://github.com/ivakyb/fish_ssh_agent
+fish_ssh_agent
+
