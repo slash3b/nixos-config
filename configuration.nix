@@ -196,9 +196,8 @@
         ctop
 
         autorandr
+        caffeine-ng
     ];
-
-  services.caffeine.enable = true;
 
   programs.gpg = {
       enable = true;
