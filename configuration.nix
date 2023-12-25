@@ -217,6 +217,7 @@
 	home.file = {
 		".tmux.conf".source = ./sources/.tmux.conf;
 		".gitconfig".source = ./sources/.gitconfig;
+		".gitconfig.work".source = ./sources/.gitconfig.work;
 		".gitignore".source = ./sources/.gitignore;
 		".alacritty.yml".source = ./sources/.alacritty.yml;
 		".config/fish/config.fish".source = ./sources/config.fish;
