@@ -118,11 +118,10 @@
   home-manager.useGlobalPkgs = true;
   home-manager.users.slash3b = { pkgs, nixpkgs, ... }: {
 
-	# with useGlobalPkgs enabled, this is not needed, just comment out for now
-	# nixpkgs.config.allowUnfree = true;
+  # with useGlobalPkgs enabled, this is not needed, just comment out for now
+  # nixpkgs.config.allowUnfree = true;
 
-	home.stateVersion = "23.11";
-
+  home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
 	neovim
@@ -197,6 +196,8 @@
 
         autorandr
         caffeine-ng
+
+        gcc
     ];
 
   programs.gpg = {
