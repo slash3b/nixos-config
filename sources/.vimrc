@@ -69,7 +69,7 @@ set t_Co=256
 " toggle invisible characters
 set invlist
 set list
-set listchars=tab:¦\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set listchars=tab:¦\ ,trail:⋅,extends:❯,precedes:❮
 
 " colorize what exceeds 120 char line
 set colorcolumn=120

@@ -198,6 +198,18 @@
         caffeine-ng
 
         gcc
+
+        # https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html
+        #start
+        tcpdump
+        # Utilities that give information about processes using the /proc filesystem
+        # https://gitlab.com/procps-ng/procps
+        procps
+        tcpdump
+        util-linux
+        #end
+
+
     ];
 
   programs.gpg = {
