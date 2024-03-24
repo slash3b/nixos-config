@@ -6,12 +6,12 @@
 {
   imports =
     [
-    	# Include the results of the hardware scan.
-	./hardware-configuration.nix
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
 
-	# add home-manager as NixOS module
-	# see: https://nix-community.github.io/home-manager/index.html#sec-install-nixos-module
-	<home-manager/nixos>
+      # add home-manager as NixOS module
+      # see: https://nix-community.github.io/home-manager/index.html#sec-install-nixos-module
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -36,16 +36,16 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.pipewire = {
-	enable = true;
-	audio.enable = true;
-	pulse.enable = true;
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
 
-	alsa = {
-		enable = true;
-		support32Bit = true;
-	};
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
 
-	# jack.enable = true;
+    # jack.enable = true;
   };
 
   # Configure keymap in X11
@@ -57,25 +57,25 @@
     dpi = 144;
 
     desktopManager = {
-        xterm.enable = false;
-        wallpaper.mode = "fill";
+      xterm.enable = false;
+      wallpaper.mode = "fill";
     };
 
     displayManager = {
-        lightdm.enable = true;
+      lightdm.enable = true;
 
-        defaultSession = "none+i3";
+      defaultSession = "none+i3";
 
-        autoLogin = {
-            user = "slash3b";
-            enable = true;
-        };
+      autoLogin = {
+        user = "slash3b";
+        enable = true;
+      };
     };
 
     videoDrivers = [ "amdgpu" ];
 
     windowManager = {
-	    i3.enable = true;
+      i3.enable = true;
     };
   };
 
@@ -86,22 +86,22 @@
   };
 
   services.tailscale = {
-  	enable = true;
+    enable = true;
   };
 
   services.syncthing = {
-        enable = true;
-        user = "slash3b";
-        dataDir = "/home/slash3b/Documents";    # Default folder for new synced folders
-        configDir = "/home/slash3b/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+    enable = true;
+    user = "slash3b";
+    dataDir = "/home/slash3b/Documents"; # Default folder for new synced folders
+    configDir = "/home/slash3b/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’
   users.users.slash3b = {
     isNormalUser = true;
     description = "Ilya";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker"];
-        packages = with pkgs; [];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
+    packages = with pkgs; [ ];
   };
 
 
@@ -118,136 +118,136 @@
   home-manager.useGlobalPkgs = true;
   home-manager.users.slash3b = { pkgs, nixpkgs, ... }: {
 
-  # with useGlobalPkgs enabled, this is not needed, just comment out for now
-  # nixpkgs.config.allowUnfree = true;
+    # with useGlobalPkgs enabled, this is not needed, just comment out for now
+    # nixpkgs.config.allowUnfree = true;
 
-  home.stateVersion = "23.11";
+    home.stateVersion = "23.11";
 
-  home.packages = with pkgs; [
-	neovim
-	firefox
-	# modern grep
-	ripgrep
-	# terminal multiplexer
-	tmux
+    home.packages = with pkgs; [
+      neovim
+      firefox
+      # modern grep
+      ripgrep
+      # terminal multiplexer
+      tmux
 
-	_1password
-	_1password-gui
-	neofetch
+      _1password
+      _1password-gui
+      neofetch
 
-	tailscale
+      tailscale
 
-	transmission
-	xfce.thunar
-	vlc
-	fish
-	htop
-	rofi
-	gnumake
-	xfce.xfce4-screenshooter
+      transmission
+      xfce.thunar
+      vlc
+      fish
+      htop
+      rofi
+      gnumake
+      xfce.xfce4-screenshooter
 
-	# just to be able to control volume throug pactl ?
-	pulseaudio
+      # just to be able to control volume throug pactl ?
+      pulseaudio
 
-	# system tools
-	pciutils
-	file
+      # system tools
+      pciutils
+      file
 
-	# chats
-	# zoom-us
+      # chats
+      # zoom-us
 
-	# dev
-	# postman
+      # dev
+      # postman
 
-	feh
-	# gpg2
-        # todo: configure this and other programs properly
+      feh
+      # gpg2
+      # todo: configure this and other programs properly
 
-		#gnupg1
-        # pinentry
+      #gnupg1
+      # pinentry
 
-        fzf
+      fzf
 
-        # json
-        jq
+      # json
+      jq
 
-        wget
-        zip
-        unzip
+      wget
+      zip
+      unzip
 
-        # pdf
-        evince
+      # pdf
+      evince
 
-        vscode
+      vscode
 
-        # Collection of common network programs
-        inetutils
+      # Collection of common network programs
+      inetutils
 
-        # direnv – unclutter your .profile
-        direnv
+      # direnv – unclutter your .profile
+      direnv
 
-        # coreutils
+      # coreutils
 
-        # i3
-        lxappearance
+      # i3
+      lxappearance
 
-        # docker
-        ctop
+      # docker
+      ctop
 
-        autorandr
-        caffeine-ng
+      autorandr
+      caffeine-ng
 
-        gcc
-        ascii
+      gcc
+      ascii
 
-        # https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html
-        #start
-        tcpdump
-        # Utilities that give information about processes using the /proc filesystem
-        # https://gitlab.com/procps-ng/procps
-        procps
-        tcpdump
-        util-linux
-        #end
+      # https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html
+      #start
+      tcpdump
+      # Utilities that give information about processes using the /proc filesystem
+      # https://gitlab.com/procps-ng/procps
+      procps
+      tcpdump
+      util-linux
+      #end
 
-        # for copying
-        xclip
+      # for copying
+      xclip
 
-        # for graphing
-        graphviz
+      # for graphing
+      graphviz
 
     ];
 
-  programs.gpg = {
+    programs.gpg = {
       enable = true;
-  };
-  # todo: learn how to import/export GPG keys
-  # and figure out storage
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "tty";
+    };
+    # todo: learn how to import/export GPG keys
+    # and figure out storage
+    services.gpg-agent = {
+      enable = true;
+      pinentryFlavor = "tty";
 
-    # cache the keys forever so we don't get asked for a password
-    defaultCacheTtl = 31536000;
-    maxCacheTtl = 31536000;
-  };
+      # cache the keys forever so we don't get asked for a password
+      defaultCacheTtl = 31536000;
+      maxCacheTtl = 31536000;
+    };
 
-	home.file = {
-		".tmux.conf".source = ./sources/.tmux.conf;
-		".gitconfig".source = ./sources/.gitconfig;
-		".gitconfig.work".source = ./sources/.gitconfig.work;
-		".gitignore".source = ./sources/.gitignore;
-		".alacritty.yml".source = ./sources/.alacritty.yml;
-		".config/fish/config.fish".source = ./sources/config.fish;
-		".vimrc".source = ./sources/.vimrc;
-		".config/nvim/init.vim".source = ./sources/init.vim;
+    home.file = {
+      ".tmux.conf".source = ./sources/.tmux.conf;
+      ".gitconfig".source = ./sources/.gitconfig;
+      ".gitconfig.work".source = ./sources/.gitconfig.work;
+      ".gitignore".source = ./sources/.gitignore;
+      ".alacritty.yml".source = ./sources/.alacritty.yml;
+      ".config/fish/config.fish".source = ./sources/config.fish;
+      ".vimrc".source = ./sources/.vimrc;
+      ".config/nvim/init.vim".source = ./sources/init.vim;
 
-		".config/i3" = {
-			source = ./sources/i3;
-			recursive = true;
-		};
-        ".ssh/config".source = ./sources/.ssh/config;
-	};
+      ".config/i3" = {
+        source = ./sources/i3;
+        recursive = true;
+      };
+      ".ssh/config".source = ./sources/.ssh/config;
+    };
   };
 
   virtualisation.docker = {
@@ -261,13 +261,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	vim
-	tree
-	# terminal
-	alacritty
-	git
+    vim
+    tree
+    # terminal
+    alacritty
+    git
 
-	# ui to connect to wifi
+    # ui to connect to wifi
     networkmanagerapplet
   ];
 
