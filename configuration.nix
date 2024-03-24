@@ -210,6 +210,11 @@
         util-linux
         #end
 
+        # for copying
+        xclip
+
+        # for graphing
+        graphviz
 
     ];
 

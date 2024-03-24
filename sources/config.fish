@@ -25,6 +25,12 @@ alias .5='cd ../../../../..'
 
 ### git
 alias gis='git status'
+alias gid='git diff'
+alias gids='git diff'
+
+### copy-paste
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # vim and emacs
 alias vim='nvim'
