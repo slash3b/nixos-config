@@ -269,8 +269,11 @@
 
     # ui to connect to wifi
     networkmanagerapplet
-  ];
 
+    # https://wiki.nixos.org/wiki/Man_pages
+    man-pages
+    man-pages-posix
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true; # programs.gnupg.agent = {
