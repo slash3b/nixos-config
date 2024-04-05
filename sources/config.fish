@@ -46,14 +46,6 @@ set -g direnv_fish_mode eval_on_arrow
 # direnv fish config 
 direnv hook fish | source
 
-# asdf golang plugin
-# https://github.com/asdf-community/asdf-golang
-# . ~/.asdf/plugins/golang/set-env.fish
-
-function godoc
-    go doc -all $argv | cat -n | less -S
-end
-
 # https://github.com/ivakyb/fish_ssh_agent
 fish_ssh_agent
 
