@@ -26,6 +26,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Monochrome theme
 Plug 'fxn/vim-monochrome'

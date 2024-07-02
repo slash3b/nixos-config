@@ -76,6 +76,8 @@ set colorcolumn=120
 
 colorscheme monochrome
 
+let loaded_matchparen=1
+
 """""""""""""""""""""""""""""""""""""""""""""""
 " => References
 """""""""""""""""""""""""""""""""""""""""""""""

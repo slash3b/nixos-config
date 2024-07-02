@@ -24,9 +24,9 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 ### git
-alias gis='git status'
-alias gid='git diff'
-alias gids='git diff --staged'
+alias gs='git status'
+alias gd='git diff'
+alias gst='git diff --staged'
 
 ### copy-paste
 alias pbcopy='xclip -selection clipboard'
