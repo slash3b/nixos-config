@@ -217,6 +217,8 @@
       # for graphing
       graphviz
 
+      # by Dave Cheney
+      httpstat
     ];
 
     programs.gpg = {
