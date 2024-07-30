@@ -219,6 +219,9 @@
 
       # by Dave Cheney
       httpstat
+
+      libpcap
+      dig
     ];
 
     programs.gpg = {
