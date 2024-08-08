@@ -222,6 +222,11 @@
 
       libpcap
       dig
+
+      # top but way nicer
+      btop
+
+      ncdu
     ];
 
     programs.gpg = {
